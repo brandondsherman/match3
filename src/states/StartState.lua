@@ -6,20 +6,19 @@ function StartState:init(par)
 
     self.highlighted = 0
     self.menuOptions = {
-        [1] = {text = 'Start', func = function()
-                Timer.tween(1, {
-                    [self] = {transitionAlpha = 255}
-                }):finish(function()
-                        gStateMachine:change('begin-game', {
-                            level = 1
-                        }) 
-                    end
-                )
+        [1] = {text = 'Start', 
+                func = function()
+                    Timer.tween(1, {
+                        [self] = {transitionAlpha = 255}
+                    }):finish(function()
+                            gStateMachine:change('begin-game') 
+                        end)
                 end
-            },
-        [2] = {text = 'Quit Game', func = function()
-                love.event.quit()
-            end
+        },
+        [2] = {text = 'Quit Game', 
+                func = function()
+                    love.event.quit()
+                end
         }
     }
     self.menuOptionsSize = table.size(self.menuOptions)
@@ -87,6 +86,7 @@ function StartState:update(dt)
         end
         
     end
+    
 end
 
 

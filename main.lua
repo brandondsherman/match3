@@ -55,6 +55,8 @@ function love.load()
         resizable = true
     })
 
+    gLevel = 1
+
     -- set music to loop and start
     gSounds['music']:setLooping(true)
     gSounds['music']:play()
@@ -103,7 +105,7 @@ function love.update(dt)
     end
 
     gStateMachine:update(dt)
-
+    Timer.update(dt)
     love.keyboard.keysPressed = {}
 end
 
