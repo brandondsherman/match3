@@ -1,0 +1,1 @@
+BeginGameState = Class{__includes = BaseState}

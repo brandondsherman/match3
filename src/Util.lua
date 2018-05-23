@@ -82,3 +82,10 @@ function print_r ( t )
     end
     print()
 end
+
+
+function table.size(tbl)
+    local count = 0
+    for _ in pairs(tbl) do count = count + 1 end
+    return count
+end
